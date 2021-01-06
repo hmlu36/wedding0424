@@ -1,7 +1,7 @@
 const { router, text } = require('bottender/router');
 const InvitationCard = require('./actions/InvitationCard');
 
-module.exports = function App() {
+module.exports = function App(context) {
     return router([
       text(/電子喜帖.*$/i, InvitationCard),
       //text(/^婚禮地點.*$/i, AQI),
