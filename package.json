@@ -9,8 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "bottender": "1.4.10",
-    "fs": "0.0.1-security"
+    "bottender": "1.4.10"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
