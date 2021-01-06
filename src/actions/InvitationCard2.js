@@ -3,7 +3,7 @@ const URL = require('../settings/url');
 
 module.exports = async function getInvitationCard(context) {
 
-    const invitations = ["invitation_cover.jpg", "invitation_content.jpg"].map((photo) => {
+    const template = ["invitation_cover.jpg", "invitation_content.jpg"].map((photo) => {
         return {
             "imageUrl": URL.INVITATION_CARD.replace("${item}", photo),
             "action": {
@@ -14,19 +14,8 @@ module.exports = async function getInvitationCard(context) {
         }
     });
 
-    const template = {
-        "type": "template",
-        "altText": "電子喜帖",
-        "template": {
-            "type": "image_carousel",
-            "columns": [
-                ...invitations
-            ]
-        }
-    };
-
     const altText = '電子喜帖';
-    await context.sendTemplate(altText, invitations);
+    await context.sendTemplate(altText, template);
 }
 
 /*
