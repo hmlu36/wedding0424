@@ -1,7 +1,7 @@
 const { router, text } = require('bottender/router');
 
 
-module.exports = async function App() {
+module.exports = function App() {
     return router([
       //text(/電子喜帖.*$/i, RadarEcho),
       //text(/^婚禮地點.*$/i, AQI),
