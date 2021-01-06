@@ -2,11 +2,7 @@ const URL = require('../settings/url');
 
 
 module.exports = async function getInvitationCard(context) {
-    const imageObjects = [
-        { label: '封面', fileName: 'invitation_cover.jpg' },
-        { label: '內頁', fileName: 'invitation_content.jpg' }
-    ];
-    const boxMessage = imageObjects.map((item) => {
+    const boxMessage = ['invitation_cover.jpg', 'invitation_content.jpg'].map((photo) => {
         return {
             type: 'bubble',
             body: {
@@ -15,7 +11,7 @@ module.exports = async function getInvitationCard(context) {
                 contents: [
                     {
                         type: 'image',
-                        url: URL.INVITATION_CARD.replace('${item}', item.fileName),
+                        url: URL.INVITATION_CARD.replace('${item}', photo),
                         size: 'full',
                         aspectMode: 'cover',
                         aspectRatio: '2:3',
@@ -33,8 +29,8 @@ module.exports = async function getInvitationCard(context) {
                         color: "#ffffff",
                         action: {
                             type: 'uri',
-                            label: item.label,
-                            uri: URL.INVITATION_CARD.replace('${item}', item.fileName)
+                            label: '放大看原圖',
+                            uri: URL.INVITATION_CARD.replace('${item}', photo)
                         },
                     },
                 ],
