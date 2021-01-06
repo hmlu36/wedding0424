@@ -9,7 +9,7 @@ module.exports = async function getInvitationCard(context) {
             "action": {
                 "type": "message",
                 "label": photo,
-                "text": "1"
+                "uri": URL.INVITATION_CARD.replace("${item}", photo)
             }
         }
     });
