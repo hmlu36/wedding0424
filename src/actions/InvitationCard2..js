@@ -3,6 +3,35 @@ const URL = require('../settings/url');
 
 module.exports = async function getInvitationCard(context) {
 
+    const invitations = ["invitation_cover.jpg", "invitation_content.jpg"].map((photo) => {
+        return {
+            "imageUrl": URL.INVITATION_CARD.replace("${item}", photo),
+            "action": {
+                "type": "message",
+                "label": photo,
+                "text": "1"
+            }
+        }
+    });
+
+    const template = {
+        "type": "template",
+        "altText": "電子喜帖",
+        "template": {
+            "type": "image_carousel",
+            "columns": [
+                ...invitations
+            ]
+        }
+    };
+
+    const altText = '電子喜帖';
+    await context.sendTemplate(altText, template);
+}
+
+/*
+module.exports = async function getInvitationCard(context) {
+
     const boxMessage = ["invitation_cover.jpg", "invitation_content.jpg"].map((photo) => {
         return {
             type: "bubble",
@@ -39,3 +68,4 @@ async function sendCarouselMessage(context, boxMessage) {
     //console.log(JSON.stringify(flexMessage));
     await context.sendFlex('電子喜帖', flexMessage);
 }
+*/
