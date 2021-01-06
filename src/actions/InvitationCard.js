@@ -1,10 +1,42 @@
 const URL = require('../settings/url');
 
-module.exports = function getInvitationCard(context) {
-    ["invitation_cover.jpg","invitation_content.jpg"].forEach(element => {
-        context.sendImage({
-            originalContentUrl: URL.INVITATION_CARD.replace("${item}", element),
-            previewImageUrl: URL.INVITATION_CARD.replace("${item}", element),
-        });
-    })
-};
+
+
+module.exports = async function getInvitationCard(context) {
+
+    const boxMessage = ["invitation_cover.jpg", "invitation_content.jpg"].map((photo) => {
+        return {
+            type: "bubble",
+            body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: URL.INVITATION_CARD.replace("${item}", photo),
+                        size: "full",
+                        aspectMode: "cover",
+                        aspectRatio: "2:3",
+                        gravity: "top"
+                    }
+                ],
+                paddingAll: "0px"
+            }
+        };
+    });
+
+    //console.log(JSON.stringify(boxMessage));
+
+    sendCarouselMessage(context, boxMessage);
+}
+
+async function sendCarouselMessage(context, boxMessage) {
+    // 產生flex message格式
+    const flexMessage = {
+        type: "carousel",
+        contents: [...boxMessage]
+    };
+
+    //console.log(JSON.stringify(flexMessage));
+    await context.sendFlex('電子喜帖', flexMessage);
+}
