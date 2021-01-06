@@ -27,7 +27,7 @@ module.exports = async function getInvitationCard(context) {
     };
 
     const altText = '電子喜帖';
-    await context.sendTemplate(altText, template);
+    await context.sendTemplate(altText, invitations);
 }
 
 /*
