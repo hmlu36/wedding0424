@@ -7,7 +7,7 @@ module.exports = async function getInvitationCard(context) {
         return {
             "imageUrl": URL.INVITATION_CARD.replace("${item}", photo),
             "action": {
-                "type": "message",
+                "type": "uri",
                 "label": photo,
                 "uri": URL.INVITATION_CARD.replace("${item}", photo)
             }
