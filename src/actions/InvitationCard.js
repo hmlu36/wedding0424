@@ -8,7 +8,7 @@ module.exports = function getInvitationCard(context) {
 
         context.sendImage({
             originalContentUrl: URL.INVITATION_CARD.replace("${id}", element) + "=w1124-h432",
-            previewImageUrl: URL.INVITATION_CARD.replace("${id}", element) + "=w337-129",
+            previewImageUrl: URL.INVITATION_CARD.replace("${id}", element) + "=w337-h129",
         });
 
     })
