@@ -8,7 +8,7 @@ module.exports = function App() {
       //text(/^婚紗輪播.*$/i, Rain),
       //text(/^報名頁面.*$/i, Satellite),
       //text(/^留言板.*$/i, Temperature),
-      text(/^.*$/i, (context) => {
+      text('*', () => {
         context.sendText(context.event.text);
       }) // echo
     ]);
