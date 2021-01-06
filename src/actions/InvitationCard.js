@@ -2,24 +2,47 @@ const URL = require('../settings/url');
 
 
 module.exports = async function getInvitationCard(context) {
-
-    const boxMessage = ["invitation_cover.jpg", "invitation_content.jpg"].map((photo) => {
+    const imageObjects = [
+        { label: '封面', fileName: 'invitation_cover.jpg' },
+        { label: '內頁', fileName: 'invitation_content.jpg' }
+    ];
+    const boxMessage = imageObjects.map((item) => {
         return {
-            type: "bubble",
+            type: 'bubble',
             body: {
-                type: "box",
-                layout: "vertical",
+                type: 'box',
+                layout: 'vertical',
                 contents: [
                     {
-                        type: "image",
-                        url: URL.INVITATION_CARD.replace("${item}", photo),
-                        size: "full",
-                        aspectMode: "cover",
-                        aspectRatio: "2:3",
-                        gravity: "top"
+                        type: 'image',
+                        url: URL.INVITATION_CARD.replace('${item}', item.fileName),
+                        size: 'full',
+                        aspectMode: 'cover',
+                        aspectRatio: '2:3',
+                        gravity: 'top'
                     }
                 ],
-                paddingAll: "0px"
+                paddingAll: '0px'
+            },
+            footer: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                    {
+                        type: 'button',
+                        color: "#ffffff",
+                        action: {
+                            type: 'uri',
+                            label: item.label,
+                            uri: URL.INVITATION_CARD.replace('${item}', item.fileName)
+                        },
+                    },
+                ],
+            },
+            styles: {
+                footer: {
+                    backgroundColor: "#6FB5F3"
+                }
             }
         };
     });
@@ -32,7 +55,7 @@ module.exports = async function getInvitationCard(context) {
 async function sendCarouselMessage(context, boxMessage) {
     // 產生flex message格式
     const flexMessage = {
-        type: "carousel",
+        type: 'carousel',
         contents: [...boxMessage]
     };
 
