@@ -1,5 +1,5 @@
 module.exports = {
-    INVITATION_CARD: 'https://drive.google.com/file/d/${id}',
+    INVITATION_CARD: 'https://lh3.google.com/u/0/d/${id}',
     RAIN: 'https://www.cwb.gov.tw/Data/rainfall/${dateStr}.QZJ8.jpg',
     SATELLITE: 'https://www.cwb.gov.tw/Data/satellite/LCC_IR1_CR_2750/LCC_IR1_CR_2750-',
     TEMPERATURE: 'https://www.cwb.gov.tw/Data/temperature/${dateStr}.GTP8.jpg',
