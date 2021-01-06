@@ -8,8 +8,8 @@ module.exports = function App(context) {
     //text(/^婚紗輪播.*$/i, Rain),
     //text(/^報名頁面.*$/i, Satellite),
     //text(/^留言板.*$/i, Temperature),
-    text('*', (context) => {
+    text(/^.*$/i, () => {
       context.sendText(context.event.text);
-    }) // echo
+    }) // 
   ]);
 };
