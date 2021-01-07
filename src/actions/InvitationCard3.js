@@ -28,12 +28,14 @@ module.exports = async function getInvitationCard(context) {
                     type: "text",
                     text: "📅 2021.04.24",
                     weight: "bold",
+                    margin: "lg",
                     decoration: "underline",
                 },
                 {
                     type: "text",
                     text: "🕒 10:30 (10:00可入場)",
                     weight: "bold",
+                    margin: "lg",
                     decoration: "underline",
                 },
                 {
@@ -45,6 +47,7 @@ module.exports = async function getInvitationCard(context) {
                             text: "📍 徠歸仁飯店",
                             align: "start",
                             gravity: "center",
+                            decoration: "underline",
                         },
                         {
                             type: "button",
