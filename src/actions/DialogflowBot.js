@@ -7,7 +7,6 @@ const Dialogflow = dialogflow({
     },
 });
 
-
 async function SayHello(context) {
     await context.sendText('Hello!');
 }
@@ -22,6 +21,8 @@ module.exports = async function App() {
         Unknown,
     ]);
 };
+
+
 /*
 const dialogflow = require('@google-cloud/dialogflow');
 

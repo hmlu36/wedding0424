@@ -15,7 +15,6 @@ module.exports = function App(context) {
     //text(/^報名頁面.*$/i, Satellite),
     //text(/^留言板.*$/i, Temperature),
     text(/^.*$/i, DialogflowBot)
-
     /*text(/^.*$/i, () => {
       context.sendText(context.event.text);
     })*/ 
