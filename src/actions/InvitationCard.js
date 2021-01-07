@@ -1,24 +1,18 @@
 const URL = require('../settings/url');
 
 
+
 module.exports = async function getInvitationCard(context) {
     const boxMessage = ['invitation_cover.jpg', 'invitation_content.jpg'].map((photo) => {
         return {
             type: 'bubble',
-            body: {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                    {
-                        type: 'image',
-                        url: URL.INVITATION_CARD.replace('${item}', photo),
-                        size: 'full',
-                        aspectMode: 'cover',
-                        aspectRatio: '2:3',
-                        gravity: 'top'
-                    }
-                ],
-                paddingAll: '0px'
+            hero: {
+                type: 'image',
+                url: URL.INVITATION_CARD.replace('${item}', photo),
+                size: 'full',
+                aspectMode: 'cover',
+                aspectRatio: '1:1.618',
+                gravity: 'top'
             },
             footer: {
                 type: 'box',
@@ -26,7 +20,8 @@ module.exports = async function getInvitationCard(context) {
                 contents: [
                     {
                         type: 'button',
-                        color: "#ffffff",
+                        height: 'sm',
+                        style: 'secondary',
                         action: {
                             type: 'uri',
                             label: '放大看原圖',
