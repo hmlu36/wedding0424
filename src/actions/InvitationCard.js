@@ -21,7 +21,6 @@ module.exports = async function getInvitationCard(context) {
                     {
                         type: 'button',
                         height: 'sm',
-                        style: 'secondary',
                         action: {
                             type: 'uri',
                             label: '放大看原圖',
