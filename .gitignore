@@ -64,7 +64,6 @@ typings/
 
 .eslintignore
 .eslintrc.js
-/yarn.lock
 /node_modules
 /package-lock.json
 /wedding0424-qgod-9a4f705213b3.json
