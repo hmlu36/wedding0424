@@ -17,6 +17,6 @@ module.exports = function App(context) {
     text(/^.*$/i, DialogflowBot)
     /*text(/^.*$/i, () => {
       context.sendText(context.event.text);
-    })*/ 
+    })*/
   ]);
 };
