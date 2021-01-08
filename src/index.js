@@ -1,7 +1,7 @@
 const { router, text } = require('bottender/router');
-const InvitationCard = require('./actions/InvitationCard3');
+const InvitationCard = require('./actions/InvitationCard');
 const InvitationCard2 = require('./actions/InvitationCard2');
-const InvitationCard3 = require('./actions/InvitationCard03');
+const InvitationCard3 = require('./actions/InvitationCard3');
 const Location = require('./actions/Location');
 const DialogflowBot = require('./actions/DialogflowBot');
 const URL = require('./settings/url');
