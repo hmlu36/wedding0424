@@ -4,6 +4,7 @@ const InvitationCard2 = require('./actions/InvitationCard2');
 const InvitationCard3 = require('./actions/InvitationCard3');
 const Location = require('./actions/Location');
 const DialogflowBot = require('./actions/DialogflowBot');
+const URL = require('./settings/url');
 
 module.exports = function App(context) {
   return router([
@@ -12,8 +13,8 @@ module.exports = function App(context) {
     text(/^([電子]?)喜帖3$/i, InvitationCard3),
     text(/([(婚禮|婚宴)]?)地點/i, Location),
     //text(/^婚紗輪播.*$/i, Rain),
-    text(/^(報名([頁面]?)).*$/i, () => {
-      context.sendText("https://hmlu36.github.io/WeddingForm/");
+    text(/^(報名([(頁面|表)]?)).*$/i, () => {
+      context.sendText(URL.WEDDINGFORM);
     }),
     //text(/^留言板.*$/i, Temperature),
     text(/^.*$/i, DialogflowBot)

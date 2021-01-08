@@ -20,7 +20,7 @@ module.exports = async function getInvitationCard(context) {
                     type: "text",
                     text: "🤵泓民佳恩👰 婚禮💒",
                     weight: "bold",
-                    size: "25px"
+                    size: "22px"
                 },
                 {
                     type: "separator"
