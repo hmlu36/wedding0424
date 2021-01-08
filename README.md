@@ -23,3 +23,8 @@ Settings ->
 
 Deploy to heroku
 The script with generate a file called google-credentials.json which holds the key from the step #1 above.
+
+
+## heroku
+Free dyno hour pool => Personal accounts are given a base of 550 free dyno hours each month
+command: heroku ps -a <app name>
