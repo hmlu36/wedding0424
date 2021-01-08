@@ -18,8 +18,9 @@ module.exports = async function getInvitationCard(context) {
             contents: [
                 {
                     type: "text",
-                    text: "泓民佳恩 婚禮",
+                    text: "🤵泓民佳恩👰 婚禮💒",
                     weight: "bold",
+                    size: "25px"
                 },
                 {
                     type: "separator"

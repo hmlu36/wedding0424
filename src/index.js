@@ -7,9 +7,9 @@ const DialogflowBot = require('./actions/DialogflowBot');
 
 module.exports = function App(context) {
   return router([
-    text('電子喜帖', InvitationCard),
-    text('電子喜帖2', InvitationCard2),
-    text('電子喜帖3', InvitationCard3),
+    text(/(電子)喜帖/i, InvitationCard),
+    text(/(電子)喜帖2/i, InvitationCard2),
+    text(/(電子)喜帖3/i, InvitationCard3),
     text(/(婚禮|婚宴)地點/i, Location),
     //text(/^婚紗輪播.*$/i, Rain),
     //text(/^報名頁面.*$/i, Satellite),
