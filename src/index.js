@@ -23,7 +23,7 @@ module.exports = function App(context) {
     text(/^([電子]?)喜帖$/i, InvitationCard),
     text(/^([電子]?)喜帖2$/i, InvitationCard2),
     text(/^([電子]?)喜帖3$/i, InvitationCard3),
-    text(/([(婚禮|婚宴)]?)地點/i, Location),
+    text(/([(婚禮|婚宴|喜宴)]?)地點/i, Location),
     //text(/^婚紗輪播.*$/i, Rain),
     text(/^(報名([(頁面|表)]?)).*$/i, () => {
       context.sendText(URL.WEDDINGFORM);
