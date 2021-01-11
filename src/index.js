@@ -10,7 +10,7 @@ const { CronJob } = require('cron');
 // 每天 7-23, 每30分鐘啟動crons, 避免heroku idle
 try {
   console.log('Before job instantiation');
-  const cronJob = new CronJob('* */1 8-23 * * *', () => {
+  const cronJob = new CronJob('* 1 8-23 * * *', () => {
     console.log("cron is running every 5 minutes prevent idle");
   });
   console.log('After cronJob instantiation');
