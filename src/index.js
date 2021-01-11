@@ -7,14 +7,12 @@ const DialogflowBot = require('./actions/DialogflowBot');
 const URL = require('./settings/url');
 const { CronJob } = require('cron');
 
-
+console.log('Before job instantiation');
 // 每天 7-23, 每30分鐘啟動crons, 避免heroku idle
-const cronJob = new CronJob(
-  '* */1 8-23 * * *',
-  () => {
-    console.log("cron is running every 5 minutes prevent idle");
-  }
-);
+const cronJob = new CronJob('* */1 8-23 * * *', function () {
+  const d = new Date();
+  console.log('Every 30 minutes between 9-17:', d);
+});
 console.log('After cronJob instantiation');
 cronJob.start();
 
