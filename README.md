@@ -13,8 +13,7 @@ and grant *Project Owner* role to this account
 
 ## GOOGLE_APPLICATION_CREDENTIALS設定  
 add this config in heroku  
-Settings -> Buildpacks -> add buildpacks  
-https://github.com/buyersight/heroku-google-application-credentials-buildpack.git  
+Settings -> Buildpacks -> add buildpacks  https://github.com/buyersight/heroku-google-application-credentials-buildpack.git  
 
 Settings ->  
 1. Create Config Vars key GOOGLE_CREDENTIALS and paste the content of service account credential JSON file as is.  
