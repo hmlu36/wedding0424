@@ -5,8 +5,8 @@ const InvitationCard3 = require('./actions/InvitationCard3');
 const Location = require('./actions/Location');
 const DialogflowBot = require('./actions/DialogflowBot');
 const URL = require('./settings/url');
-const { CronJob } = require('cron');
-
+//const { CronJob } = require('cron');
+/*
 // 每天 7-23, 每30分鐘啟動crons, 避免heroku idle
 try {
   console.log('Before job instantiation');
@@ -19,7 +19,7 @@ try {
 } catch (e) {
   console.log('omg err', e);
 }
-
+*/
 
 module.exports = function App(context) {
   return router([
