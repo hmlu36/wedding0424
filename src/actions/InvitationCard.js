@@ -7,7 +7,7 @@ module.exports = async function getInvitationCard(context) {
         type: 'bubble',
         hero: {
             type: "image",
-            url: URL.INVITATION_CARD.replace('${item}', 'invitation_cover.jpg'),
+            url: URL.INVITATION_CARD.replace('${item}', 'invitation_card.jpg'),
             size: "full",
             aspectRatio: "1:1.618",
             aspectMode: "cover"
