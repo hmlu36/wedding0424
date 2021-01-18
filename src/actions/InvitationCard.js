@@ -2,12 +2,13 @@ const URL = require('../settings/url');
 
 
 module.exports = async function getInvitationCard(context) {
+    console.log(URL.GITHUB_REPOSITORY);
     // 產生flex message格式
     const flexMessage = {
         type: 'bubble',
         hero: {
             type: "image",
-            url: URL.INVITATION_CARD.replace('${item}', 'invitation_cover.jpg'),
+            url: URL.GITHUB_REPOSITORY.replace('${item}', 'invitation_cover.jpg'),
             size: "full",
             aspectRatio: "1:1.618",
             aspectMode: "cover"

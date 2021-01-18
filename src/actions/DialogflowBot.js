@@ -2,14 +2,7 @@ const { chain } = require('bottender');
 const dialogflow = require('@bottender/dialogflow');
 const Dialogflow = dialogflow({
     projectId: process.env.GOOGLE_APPLICATION_PROJECT_ID,
-    actions: {
-        greeting: SayHello,
-    },
 });
-
-async function SayHello(context) {
-    await context.sendText('Hello!');
-}
 
 async function Unknown(context) {
     await context.sendText('您輸入的內容我不懂哦~🏀');
