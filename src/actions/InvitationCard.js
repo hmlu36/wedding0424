@@ -9,7 +9,7 @@ module.exports = async function getInvitationCard(context) {
             type: "image",
             url: URL.INVITATION_CARD.replace('${item}', 'invitation_card.jpg'),
             size: "full",
-            aspectRatio: "1:1.618",
+            aspectRatio: "1:1",
             aspectMode: "cover"
         },
         body: {
