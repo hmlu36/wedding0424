@@ -45,5 +45,5 @@ module.exports = async function getPreWeddingPhoto(context) {
             }
         }
     ];
-    await context.imageCarousel('婚紗照', imageCarousel);
+    await context.sendImageCarouselTemplate('婚紗照', imageCarousel);
 }
