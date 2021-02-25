@@ -2,48 +2,28 @@ const URL = require('../settings/url');
 
 
 module.exports = async function getPreWeddingPhoto(context) {
-    // 產生imageCarousel格式
-    const imageCarousel = [
-        {
-            imageUrl: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto1.jpg',
-            action: {
-                type: 'uri',
-                label: '放大',
-                uri: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto1.jpg'
+    // 產生flex message格式
+    const boxMessage = [...Array(5).keys()].map(index => {
+        return {
+            type: 'bubble',
+            size: 'giga',
+            hero: {
+                type: 'image',
+                aspectRatio: index == 1 ? '3:2' : '2:3',
+                size: 'full',
+                aspectMode: 'cover',
+                url: `https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto${index + 1}.jpg`,
+
             }
-        },
-        {
-            imageUrl: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto2.jpg',
-            action: {
-                type: 'uri',
-                label: '放大',
-                uri: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto2.jpg'
-            }
-        },
-        {
-            imageUrl: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto3.jpg',
-            action: {
-                type: 'uri',
-                label: '放大',
-                uri: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto3.jpg'
-            }
-        },
-        {
-            imageUrl: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto4.jpg',
-            action: {
-                type: 'uri',
-                label: '放大',
-                uri: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto4.jpg'
-            }
-        },
-        {
-            imageUrl: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto5.jpg',
-            action: {
-                type: 'uri',
-                label: '放大',
-                uri: 'https://raw.githubusercontent.com/hmlu36/wedding0424/main/photos/PreWeddingPhoto5.jpg'
-            }
-        }
-    ];
-    await context.sendImageCarouselTemplate('婚紗照', imageCarousel);
+        };
+    });
+
+    // 產生flex message格式
+    const flexMessage = {
+        type: 'carousel',
+        contents: [...boxMessage]
+    };
+
+    //console.log(JSON.stringify(flexMessage));
+    await context.sendFlex('婚紗照', flexMessage);
 }
