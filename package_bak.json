@@ -6,7 +6,7 @@
     "dev": "bottender dev start --console",
     "lint": "eslint . ",
     "start": "bottender start",
-    "test": "jest",
+    "test": "jest"
   },
   "dependencies": {
     "@bottender/dialogflow": "^1.5.1-alpha.8",

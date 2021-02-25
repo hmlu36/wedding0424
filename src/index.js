@@ -3,6 +3,7 @@ const InvitationCard = require('./actions/InvitationCard');
 const InvitationCard2 = require('./actions/InvitationCard2');
 const InvitationCard3 = require('./actions/InvitationCard3');
 const Location = require('./actions/Location');
+const PreWeddingPhoto = require('./actions/PreWeddingPhoto');
 const DialogflowBot = require('./actions/DialogflowBot');
 const URL = require('./settings/url');
 //const { CronJob } = require('cron');
@@ -27,6 +28,8 @@ module.exports = function App(context) {
     text(/^([電子]?)喜帖2$/i, InvitationCard2),
     text(/^([電子]?)喜帖3$/i, InvitationCard3),
     text(/([(婚禮|婚宴|喜宴)]?)地點/i, Location),
+    text(/(婚紗|婚紗照)/i, PreWeddingPhoto),
+    
     //text(/^婚紗輪播.*$/i, Rain),
     text(/^(報名([(頁面|表)]?)).*$/i, () => {
       context.sendText(URL.WEDDINGFORM);
