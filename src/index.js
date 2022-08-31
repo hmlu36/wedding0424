@@ -27,7 +27,7 @@ module.exports = function App(context) {
     text(/^([電子]?)喜帖$/i, InvitationCard),
     text(/^([電子]?)喜帖2$/i, InvitationCard2),
     text(/^([電子]?)喜帖3$/i, InvitationCard3),
-    text(/([(婚禮|婚宴|喜宴)]?)地點/i, Location),
+    //text(/([(婚禮|婚宴|喜宴)]?)地點/i, Location),
     text(/(婚紗|婚紗照)/i, PreWeddingPhoto),
     
     //text(/^婚紗輪播.*$/i, Rain),
