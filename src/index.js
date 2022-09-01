@@ -36,8 +36,8 @@ module.exports = function App(context) {
         }),
         //text(/^留言板.*$/i, Temperature),
         //text(/^.*$/i, DialogflowBot)
-        /*text(/^.*$/i, () => {
-          context.sendText(context.event.text);
-        })*/
+        text(/^.*$/i, () => {
+            context.sendText(context.event.text);
+        })
     ]);
 };
